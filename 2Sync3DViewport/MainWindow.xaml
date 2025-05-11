@@ -1,0 +1,33 @@
+﻿<Window x:Class="_2Sync3DViewport.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2Sync3DViewport"
+        xmlns:view="clr-namespace:_2Sync3DViewport.View"
+        xmlns:helix="http://helix-toolkit.org/wpf"
+        mc:Ignorable="d"
+        Title="Lucky 3D Viewer" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Grid.Column="0">
+            <Rectangle Name="HeaderBackgroundLeft" Fill="LightSalmon" Grid.RowSpan="3" Grid.Column="0"/>
+            <view:ContentViewer x:Name="ContentViewerlLeft" />
+
+        </Grid>
+        
+        <Grid Grid.Column="1">
+            <Rectangle Name="HeaderBackgroundRight" Fill="LightSteelBlue" Grid.RowSpan="3" Grid.Column="1"/>
+            <view:ContentViewer x:Name="ContentViewerlRight"  />
+
+        </Grid>
+        
+        
+
+    </Grid>
+</Window>

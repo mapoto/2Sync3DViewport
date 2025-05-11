@@ -56,7 +56,7 @@ namespace _2Sync3DViewport.View
                 // Filter for 3D files
                 openFileDialog.Filter = "3D Files (*.obj)|*.obj|All Files (*.*)|*.*";
                 FilePath = openFileDialog.FileName;
-
+                FilePathTextBox.Text = filePath;
                 ModelVisual3D device3D = new ModelVisual3D();
                 device3D.Content = Display3d(filePath);
 
@@ -91,7 +91,7 @@ namespace _2Sync3DViewport.View
 
         private void viewPort3d_Drop(object sender, DragEventArgs e)
         {
-            filePath = e.Data.ToString();
+            FilePath = e.Data.ToString();
         }
     }
 }

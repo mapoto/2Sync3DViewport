@@ -14,17 +14,23 @@
             <RowDefinition Height="20px"/>
         </Grid.RowDefinitions>
         
-        <Rectangle Name="HeaderBackgroundLeft" Fill="LightGray" Grid.RowSpan="3" Grid.Column="0"/>
+        <!--<Rectangle Name="HeaderBackgroundLeft" Fill="LightGray" Grid.RowSpan="3" Grid.Column="0"/>-->
 
         <!--Header-->
         <Grid Grid.Row="0">
-            <Button Name="OpenButton" Content="Open" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Width="50" Click="OpenButton_Click" Grid.Row="0" Grid.Column="1"/>
-            <TextBox Name="FilePathTextBox" Margin="70,0,10,0" VerticalAlignment="Center" Width="Auto" Grid.Row="0" Grid.Column="1" IsReadOnly="True" Text="{Binding BoundedFilePath}" />
+            <Button Name="OpenButton" Content="Open" 
+                    HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" 
+                    Width="50" Click="OpenButton_Click" Grid.Row="0" Grid.Column="1"/>
+            <TextBox Name="FilePathTextBox" Margin="70,0,10,0" 
+                     VerticalAlignment="Center" Width="Auto" 
+                     Grid.Row="0" Grid.Column="1" IsReadOnly="True" />
         </Grid>
 
         <!--3D Viewport-->
         <Grid Grid.Row="1">
-            <helix:HelixViewport3D x:Name="viewPort3d" Margin="10,10,10,10" ZoomExtentsWhenLoaded="true" Grid.RowSpan="2" DragDrop.Drop="viewPort3d_Drop">
+            <helix:HelixViewport3D x:Name="viewPort3d" Margin="10,10,10,10" ZoomExtentsWhenLoaded="true" 
+                                   Grid.RowSpan="2" DragDrop.Drop="viewPort3d_Drop" Background="Black"
+                                   ShowFrameRate="True">
                 <!-- Remember to add light to the scene -->
                 <helix:DefaultLights/>
             </helix:HelixViewport3D>
@@ -32,8 +38,8 @@
 
         <!--Footer-->
         <Grid Grid.Row="2">
-            <TextBlock Name="MouseCoordLabel" Text="{Binding BoundedFilePath, UpdateSourceTrigger=PropertyChanged}" 
-                       HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="8"/>
+            <TextBlock Name="MouseCoordLabel" HorizontalAlignment="Left" 
+                       Margin="10,0,0,0" VerticalAlignment="Center" FontSize="8"/>
         </Grid>
     </Grid>
 </UserControl>

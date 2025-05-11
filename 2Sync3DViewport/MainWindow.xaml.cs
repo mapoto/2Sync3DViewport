@@ -26,27 +26,27 @@ namespace _2Sync3DViewport
 
         public MainWindow()
         {
-            //InitializeComponent();
+            InitializeComponent();
 
 
-            //var leftCamera = ContentViewerlLeft.Camera;
-            //var rightCamera = ContentViewerlRight.Camera;
+            var leftCamera = ContentViewerlLeft.Camera;
+            var rightCamera = ContentViewerlRight.Camera;
 
-            //// Listen for changes in the left camera and update the right camera
-            //leftCamera.Changed += (s, e) =>
-            //{
-            //    ContentViewerlRight.Camera.Position = leftCamera.Position;
-            //    ContentViewerlRight.Camera.LookDirection = leftCamera.LookDirection;
-            //    ContentViewerlRight.Camera.UpDirection = leftCamera.UpDirection;
-            //};
+            // Listen for changes in the left camera and update the right camera
+            leftCamera.Changed += (s, e) =>
+            {
+                ContentViewerlRight.Camera.Position = leftCamera.Position;
+                ContentViewerlRight.Camera.LookDirection = leftCamera.LookDirection;
+                ContentViewerlRight.Camera.UpDirection = leftCamera.UpDirection;
+            };
 
-            //// Optionally, synchronize the other way around if needed
-            //rightCamera.Changed += (s, e) =>
-            //{
-            //    ContentViewerlLeft.Camera.Position = rightCamera.Position;
-            //    ContentViewerlLeft.Camera.LookDirection = rightCamera.LookDirection;
-            //    ContentViewerlLeft.Camera.UpDirection = rightCamera.UpDirection;
-            //};
+            // Optionally, synchronize the other way around if needed
+            rightCamera.Changed += (s, e) =>
+            {
+                ContentViewerlLeft.Camera.Position = rightCamera.Position;
+                ContentViewerlLeft.Camera.LookDirection = rightCamera.LookDirection;
+                ContentViewerlLeft.Camera.UpDirection = rightCamera.UpDirection;
+            };
 
         }
 
